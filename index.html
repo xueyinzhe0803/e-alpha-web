@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="E-ALPHA provides EV chargers and professional installation 
+  across New Zealand. Fast, safe and reliable charging for homes and businesses." />
+  <title>E-ALPHA - Certified Tesla Charger Installers</title>
+  <link rel="icon" href="assets/img/Logo.png" />
+  <!-- 预加载关键资源 -->
+  <link rel="preload" as="image" href="assets/img/main-2.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/main-2.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/img/zeeda-600.webp">
+  <link rel="preload" as="style" href="assets/css/base.css">
+  <link rel="preload" as="style" href="assets/css/nav.css">
+  <link rel="preload" as="style" href="assets/css/index.css">
+  <link rel="preload" as="script" href="assets/js/nav.js">
+
+  <!-- 关键CSS内联或异步加载 -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="assets/css/index.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/css/styles.css" media="print" onload="this.media='all'">
+
+</head>
+
+<body class="gradient-background">
+  <!-- 导航栏占位符 - 被动态加载 -->
+  <div id="header-placeholder"></div>
+
+  <!-- 主页区域：全屏背景图展示区域 -->
+  <section class="home-hero">
+    <!-- Hero 背景图：响应式 + 回退 + 高优先级 -->
+    <picture class="hero-bg">
+      <source type="image/avif" srcset="assets/img/zd-main.avif">
+      <source type="image/webp" srcset="assets/img/zd-main.webp">
+      <img src="assets/img/zd-main.webp" width="1600" height="900" alt="Hero image" fetchpriority="high"
+        decoding="async">
+    </picture>
+    <div class="hero-content">
+      <!-- ZD ENERGY 品牌标志 -->
+      <div class="zd-logo">
+        <picture>
+          <source srcset="assets/img/zeeda-300.webp 1x, assets/img/zeeda-600.webp 2x" type="image/webp">
+          <source srcset="assets/img/zeeda.avif" type="image/avif">
+          <img src="assets/img/zeeda.png" alt="ZD ENERGY" class="zd-logo-img" />
+        </picture>
+      </div>
+      <!-- 主标题：服务介绍 -->
+      <!-- <h1 class="hero-title">Certified Zeeda Charger Installers Auckland</h1> -->
+      <!-- 副标题：详细描述 -->
+      <p class="hero-subtitle">Our dedicated Team supply and install Zeeda Chargers / Wall Connectors across
+        Auckland and New Zealand wide.</p>
+
+      <!-- 按钮区域：包含两个主要操作按钮 -->
+      <div class="hero-buttons">
+        <!-- Instant Quote 按钮：链接到报价页面 -->
+        <a href="instant-quote.html" class="btn-primary">
+          <!-- 简化的文档图标 -->
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <!-- 文档外框 -->
+            <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+            <!-- 文档折角 -->
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <!-- 两行文字 -->
+            <line x1="8" y1="13" x2="16" y2="13"></line>
+            <line x1="8" y1="17" x2="16" y2="17"></line>
+          </svg>
+          INSTANT QUOTE
+        </a>
+
+        <!-- Contact Us 按钮：链接到联系页面 -->
+        <a href="contact.html" class="btn-secondary">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92V18.92C22.0011 19.1985 21.9441 19.4742 21.8325 19.7293C21.7209 19.9845 21.5573 20.2136 21.3521 20.402C21.1468 20.5903 20.9046 20.7336 20.6407 20.8227C20.3769 20.9119 20.0974 20.9451 19.82 20.92C16.7428 20.5856 13.787 19.5341 11.19 17.85C8.77382 16.3147 6.72533 14.2662 5.18999 11.85C3.49997 9.2412 2.44824 6.271 2.11999 3.18C2.095 2.90347 2.12787 2.62476 2.21649 2.36162C2.30512 2.09849 2.44756 1.85669 2.63476 1.65162C2.82196 1.44655 3.0498 1.28271 3.30379 1.17052C3.55777 1.05833 3.83233 1.00026 4.10999 1H6.10999C6.59524 0.995321 7.06572 1.16708 7.43369 1.48353C7.80166 1.79999 8.04201 2.23945 8.10999 2.72C8.23662 3.68007 8.47144 4.62273 8.80999 5.53C8.94454 5.88792 8.97366 6.27691 8.8939 6.65088C8.81415 7.02485 8.62886 7.36811 8.35999 7.64L7.08999 8.91C8.51355 11.4135 10.5865 13.4864 13.09 14.91L14.36 13.64C14.6319 13.3711 14.9751 13.1858 15.3491 13.1061C15.7231 13.0263 16.1121 13.0555 16.47 13.19C17.3773 13.5286 18.3199 13.7634 19.28 13.89C19.7658 13.9585 20.2094 14.2032 20.5265 14.5775C20.8437 14.9518 21.0122 15.4296 21 15.92V16.92Z">
+            </path>
+          </svg>
+          CONTACT US
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 内容区域1：左侧视频，右侧文字介绍 -->
+  <section class="content-section gradient-section">
+    <div class="content-box">
+      <div class="content-left reveal-left video-container" data-video-src="assets/video/product-720.mp4"
+        data-video-poster="assets/video/product-poster.jpg">
+        <img class="video-poster" src="assets/video/product-poster.jpg" alt="Video Poster" />
+        <div class="video-play-button">
+          <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5,3 19,12 5,21"></polygon>
+          </svg>
+        </div>
+      </div>
+      <div class="content-right reveal-right">
+        <h2 class="content-title">The ZeeDa charging station was a wise investment in New Zealand</h2>
+        <div class="content-text">
+          <p>In light of the fact that convenient transportation methods may become a reality in the future,
+            the electric vehicle owners in New Zealand have made a wise choice by opting for the Zeeda charger.</p>
+          <p>At E-Alpha, we comprehend the significance of a consistent and effective establishment process and are here
+            to direct you through it.</p>
+          <p>Awaiting the arrival of your Zeeda charger? Now is the perfect time to get installation of your home
+            charger with us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 内容区域2：全球合作伙伴展示 -->
+  <section class="partners-section">
+    <div class="container">
+      <h2 class="partners-title">ZeeDa's Global Partners</h2>
+      <div class="partners-grid">
+        <div class="partner-item">
+          <picture>
+            <source srcset="assets/img/Automobile brand/BYD-300.avif 1x, assets/img/Automobile brand/BYD-600.avif 2x"
+              type="image/avif">
+            <source srcset="assets/img/Automobile brand/BYD-300.webp 1x, assets/img/Automobile brand/BYD-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/BYD.jpg" alt="BYD" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source
+              srcset="assets/img/Automobile brand/DaZhong-300.avif 1x, assets/img/Automobile brand/DaZhong-600.avif 2x"
+              type="image/avif">
+            <source
+              srcset="assets/img/Automobile brand/DaZhong-300.webp 1x, assets/img/Automobile brand/DaZhong-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/DaZhong.jpg" alt="Volkswagen" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source
+              srcset="assets/img/Automobile brand/VOLVO-300.avif 1x, assets/img/Automobile brand/VOLVO-600.avif 2x"
+              type="image/avif">
+            <source
+              srcset="assets/img/Automobile brand/VOLVO-300.webp 1x, assets/img/Automobile brand/VOLVO-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/VOLVO.jpg" alt="Volvo" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source srcset="assets/img/Automobile brand/BMW-300.avif 1x, assets/img/Automobile brand/BMW-600.avif 2x"
+              type="image/avif">
+            <source srcset="assets/img/Automobile brand/BMW-300.webp 1x, assets/img/Automobile brand/BMW-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/BMW.jpg" alt="BMW" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source
+              srcset="assets/img/Automobile brand/PORSCHE-300.avif 1x, assets/img/Automobile brand/PORSCHE-600.avif 2x"
+              type="image/avif">
+            <source
+              srcset="assets/img/Automobile brand/PORSCHE-300.webp 1x, assets/img/Automobile brand/PORSCHE-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/PORSCHE.jpg" alt="Porsche" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source
+              srcset="assets/img/Automobile brand/NISSAN-300.avif 1x, assets/img/Automobile brand/NISSAN-600.avif 2x"
+              type="image/avif">
+            <source
+              srcset="assets/img/Automobile brand/NISSAN-300.webp 1x, assets/img/Automobile brand/NISSAN-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/NISSAN.jpg" alt="Nissan" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source
+              srcset="assets/img/Automobile brand/TOYOYA-300.avif 1x, assets/img/Automobile brand/TOYOYA-600.avif 2x"
+              type="image/avif">
+            <source
+              srcset="assets/img/Automobile brand/TOYOYA-300.webp 1x, assets/img/Automobile brand/TOYOYA-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/TOYOYA.jpg" alt="Toyota" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source srcset="assets/img/Automobile brand/Gord-300.avif 1x, assets/img/Automobile brand/Gord-600.avif 2x"
+              type="image/avif">
+            <source srcset="assets/img/Automobile brand/Gord-300.webp 1x, assets/img/Automobile brand/Gord-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/Gord.jpg" alt="Ford" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source srcset="assets/img/Automobile brand/GWM-300.avif 1x, assets/img/Automobile brand/GWM-600.avif 2x"
+              type="image/avif">
+            <source srcset="assets/img/Automobile brand/GWM-300.webp 1x, assets/img/Automobile brand/GWM-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/GWM.jpg" alt="GWM" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source srcset="assets/img/Automobile brand/SAIC-300.avif 1x, assets/img/Automobile brand/SAIC-600.avif 2x"
+              type="image/avif">
+            <source srcset="assets/img/Automobile brand/SAIC-300.webp 1x, assets/img/Automobile brand/SAIC-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/SAIC.jpg" alt="SAIC" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source srcset="assets/img/Automobile brand/MG-300.avif 1x, assets/img/Automobile brand/MG-600.avif 2x"
+              type="image/avif">
+            <source srcset="assets/img/Automobile brand/MG-300.webp 1x, assets/img/Automobile brand/MG-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/MG.jpg" alt="MG" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source
+              srcset="assets/img/Automobile brand/CHERY-300.avif 1x, assets/img/Automobile brand/CHERY-600.avif 2x"
+              type="image/avif">
+            <source
+              srcset="assets/img/Automobile brand/CHERY-300.webp 1x, assets/img/Automobile brand/CHERY-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/CHERY.jpg" alt="Chery" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source
+              srcset="assets/img/Automobile brand/GAC MOTOR-300.avif 1x, assets/img/Automobile brand/GAC MOTOR-600.avif 2x"
+              type="image/avif">
+            <source
+              srcset="assets/img/Automobile brand/GAC MOTOR-300.webp 1x, assets/img/Automobile brand/GAC MOTOR-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/GAC MOTOR.jpg" alt="GAC Motor" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source
+              srcset="assets/img/Automobile brand/CHANGAN-300.avif 1x, assets/img/Automobile brand/CHANGAN-600.avif 2x"
+              type="image/avif">
+            <source
+              srcset="assets/img/Automobile brand/CHANGAN-300.webp 1x, assets/img/Automobile brand/CHANGAN-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/CHANGAN.jpg" alt="Changan" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source
+              srcset="assets/img/Automobile brand/GEELY-300.avif 1x, assets/img/Automobile brand/GEELY-600.avif 2x"
+              type="image/avif">
+            <source
+              srcset="assets/img/Automobile brand/GEELY-300.webp 1x, assets/img/Automobile brand/GEELY-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/GEELY.jpg" alt="Geely" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+        <div class="partner-item">
+          <picture>
+            <source srcset="assets/img/Automobile brand/NETA-300.avif 1x, assets/img/Automobile brand/NETA-600.avif 2x"
+              type="image/avif">
+            <source srcset="assets/img/Automobile brand/NETA-300.webp 1x, assets/img/Automobile brand/NETA-600.webp 2x"
+              type="image/webp">
+            <img src="assets/img/Automobile brand/NETA.jpg" alt="Neta" class="partner-logo-img" loading="lazy"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+          </picture>
+        </div>
+      </div>
+      <div class="partners-button">
+        <a href="instant-quote.html" class="btn-primary">
+          <!-- 简化的文档图标 -->
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <!-- 文档外框 -->
+            <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+            <!-- 文档折角 -->
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <!-- 两行文字 -->
+            <line x1="8" y1="13" x2="16" y2="13"></line>
+            <line x1="8" y1="17" x2="16" y2="17"></line>
+          </svg>
+          INSTANT QUOTE
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 内容区域3：左边文字，右边背景图 -->
+  <section class="content-section gradient-section">
+    <div class="content-box">
+      <!-- 左边文字 -->
+      <div class="content-right reveal-left">
+        <h2 class="content-title">Installation process of ZeeDa charging station</h2>
+        <div class="content-text">
+          <p>Installing the ZeeDa charger is a straightforward and enjoyable process
+            that can significantly enhance your charging experience.</p>
+          <p>Our professional staff on the platform have extensive experience in installation
+            and can ensure that your charging station operates smoothly. </p>
+          <p>We guarantee that your charging station can control your vehicle with almost no interruption.</p>
+        </div>
+      </div>
+      <!-- 右边背景图 -->
+      <div class="content-left reveal-right" style="background: url('assets/img/Worker.png') center/cover no-repeat;">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 内容区域4 -->
+  <section class="services-section" id="section-4" style="display: none;">
+    <div class="container">
+      <h2 class="services-title">What Else Can E-Alpha Do?</h2>
+      <div class="services-grid">
+        <!-- 左：家用安装 -->
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <!-- House icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M3 11l9-7 9 7"></path>
+              <path d="M9 22V12h6v10"></path>
+              <path d="M2 12h20v10H2z" opacity=".15"></path>
+            </svg>
+          </div>
+          <h3 class="service-heading">
+            Domestic<br>EV Charger<br>Installations
+          </h3>
+          <span class="service-divider"></span>
+          <p class="service-text">
+            Have you just purchased an electric vehicle like BYD, CHANGGE, GEELY or Mercedes-Benz EQS?
+            Then you will need a reliable home charger.
+          </p>
+          <a class="service-btn" href="domestic.html">More Info</a>
+        </article>
+
+        <!-- 中：商用安装 -->
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <!-- Building icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="18" rx="1"></rect>
+              <rect x="14" y="7" width="7" height="14" rx="1"></rect>
+              <path d="M6.5 7v.01M6.5 10v.01M6.5 13v.01M6.5 16v.01
+                       M17.5 10v.01M17.5 13v.01M17.5 16v.01"></path>
+            </svg>
+          </div>
+          <h3 class="service-heading">
+            Commercial<br>EV Charger<br>Installations
+          </h3>
+          <span class="service-divider"></span>
+          <p class="service-text">
+            Have a business or new project that requires EV chargers?
+            E-Alpha is your trusted partner to deliver on time and on budget.
+          </p>
+          <a class="service-btn" href="business.html">More Info</a>
+        </article>
+
+        <!-- 右：维护服务 -->
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <!-- Tools icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M14.7 6.3a4 4 0 0 1-5.4 5.4l-5.3 5.3a2 2 0 0 0 2.8 2.8l5.3-5.3a4 4 0 0 1 5.4-5.4z"></path>
+              <path d="M16 16l5 5"></path>
+            </svg>
+          </div>
+          <h3 class="service-heading">
+            Maintenance<br>&<br> Service
+          </h3>
+          <span class="service-divider"></span>
+          <p class="service-text">
+            We don’t just install chargers — we provide ongoing maintenance
+            and support to keep your EV infrastructure running smoothly.
+          </p>
+          <a class="service-btn" href="service.html">More Info</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= 区域5（白底两栏）开始 ========= -->
+  <section class="section-5 gradient-section" id="section-5">
+    <div class="section5-container">
+      <header class="section5-head reveal">
+        <h2 class="section5-title">Why Choose E-Alpha</h2>
+        <p class="section5-sub">Safe • Efficient • Smart — Trusted EV charging for homes and businesses.</p>
+      </header>
+
+      <div class="section5-grid">
+        <!-- 左文案 -->
+        <div class="section5-col section5-text reveal-left">
+          <ul class="section5-list">
+            <li><strong>Certified Installers</strong> — NZ qualified electricians with years of EV experience.</li>
+            <li><strong>End-to-End Service</strong> — Site inspection, load assessment, install and tune.</li>
+            <li><strong>After-sales Support</strong> — Maintenance plans and on-call support.</li>
+          </ul>
+
+          <div class="section5-cta">
+            <a href="instant-quote.html" class="btn-primary">Get a Free quote</a>
+          </div>
+
+          <div class="section5-stats">
+            <div class="stat"><span class="n">500+</span><span class="l">Installs</span></div>
+            <div class="stat"><span class="n">4.9★</span><span class="l">Customer Rating</span></div>
+            <div class="stat"><span class="n">24/7</span><span class="l">Support</span></div>
+          </div>
+        </div>
+
+        <!-- 右图 -->
+        <div class="section5-col section5-media reveal-right">
+          <div class="section5-image" style="background-image:url('assets/img/main-1.png');"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer占位符 - 被动态加载 -->
+  <div id="footer-placeholder"></div>
+
+  <!-- 视频模态层 -->
+  <div class="video-modal" id="videoModal">
+    <div class="video-modal-backdrop"></div>
+    <div class="video-modal-content">
+      <button class="video-modal-close" aria-label="关闭视频">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <video class="video-modal-player" controls>
+        <source data-src="assets/video/product-720.webm" type="video/webm">
+        <source data-src="assets/video/product-720.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+
+
+  <!-- JavaScript 脚本：导航栏和主要功能脚本 -->
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/animation.js" defer></script>
+  <script src="assets/js/poster-video.js" defer></script>
+</body>
+
+</html>

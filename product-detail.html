@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Detailed specs, features and installation options for 
+  this E-ALPHA EV charger. Get a quote and schedule installation." />
+  <title>Product Detail - E-ALPHA</title>
+  <link rel="icon" href="assets/img/Logo.png" />
+  <!-- 预加载关键CSS -->
+  <link rel="preload" as="style" href="assets/css/base.css">
+  <link rel="preload" as="style" href="assets/css/nav.css">
+
+  <!-- 关键CSS同步加载 -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+
+  <!-- 非关键CSS异步加载 -->
+  <link rel="stylesheet" href="assets/css/product-detail.css" media="print" onload="this.media='all'">
+
+</head>
+
+<body class="gradient-background">
+  <!-- 导航栏占位符 - 将被动态加载 -->
+  <div id="header-placeholder"></div>
+
+  <!-- 产品导航 -->
+  <nav class="breadcrumb" aria-label="产品导航">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#" onclick="history.back()">Product</a></li>
+        <li class="current-page" id="breadcrumb-product">Product Details</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- 产品详情主体 -->
+  <main class="product-detail-main">
+    <div class="container">
+      <div class="product-detail-container" id="product-content">
+        <!-- 产品内容将通过JavaScript动态加载 -->
+        <div class="loading">
+          <p>Loading product information...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 产品数据模板 -->
+  <script type="application/json" id="product-data">
+  {
+    "g74": {
+      "name": "G SERIES – 7.4kW 32A Single Phase EV Charger",
+      "model": "G SERIES",
+      "brief": "Compact single‑phase charger with optional connectivity and RFID.",
+      "price": "Request a quote",
+      "image": "assets/img/7.4-G.png",
+      "imageAvif": "assets/img/7.4-G.avif",
+      "imageWebp": "assets/img/7.4-G.webp",
+      "gallery": ["assets/img/7.4-G.png"],
+      "description": "A compact single‑phase EV charger designed for indoor or outdoor installation. It supports optional WiFi/4G/Bluetooth connectivity and RFID access, with multiple built‑in protections for safe everyday use.",
+      "specifications": {
+        "Technical specifications": {
+          "Power": "7.4kW; 3.7kW option",
+          "Voltage": "AC230V",
+          "Rated Input Current": "32A; 16A option",
+          "Operating Frequency": "50Hz",
+          "Phase": "Single Phase",
+          "IP Rating": "IP55",
+          "Altitude": "≤2000m",
+          "Relative Humidity": "5%~95% No Condensation",
+          "Operating Temperature": "-25℃~+50℃",
+          "Storage Temperature": "-40℃~+85℃",
+          "Leakage Protection Current": "DC 6mA, AC30mA",
+          "Leakage Protection Time": "≤0.1s",
+          "Cable Length": "7m",
+          "Connector Power Line Contact": "AC 277V, 40A",
+          "Functions": "WiFi, 4G, Bluetooth, RFID (with 2 RFID cards)",
+          "Communication Protocol": "OCPP1.6JSON",
+          "APP Available": "Yes",
+          "Product Size": "310×214×90mm",
+          "Net Weight": "3.5kg"
+        }
+      },
+      "features": [
+        "CCS2 EV car compatible",
+        "Single phase with optional 3.7kW or 7.4kW AC charging",
+        "IP55 rated for indoor/outdoor applications",
+        "Optional wireless connection with WiFi/4G/Bluetooth for commercial applications",
+        "Optional RFID function for residential applications",
+        "Optional wall-mounted installation or pedestal installation to suit different site needs",
+        "Compact design for easy carry and installation",
+        "Multiple protections for safe use"
+      ]
+    },
+    "k74": {
+      "name": "K SERIES – 7.4kW 32A Single Phase EV Charger",
+      "model": "K SERIES",
+      "brief": "Single‑phase EV charger with max IP66 rating and multiple protections.",
+      "price": "Request a quote",
+      "image": "assets/img/7.4-K.png",
+      "imageAvif": "assets/img/7.4-K.avif",
+      "imageWebp": "assets/img/7.4-K.webp",
+      "gallery": ["assets/img/7.4-K.png"],
+      "description": "A single‑phase EV charger for indoor or outdoor installation with max IP66 rating. Optional WiFi/4G/Bluetooth connectivity and RFID are available, plus multiple built‑in protections for safe everyday charging.",
+      "specifications": {
+        "Technical specifications": {
+          "Power": "7.4kW; 3.7kW option",
+          "Voltage": "AC 230V for EU; AC165-265V for US",
+          "Rated Input Current": "32A; 16A option",
+          "Operating Frequency": "40~60Hz",
+          "Phase": "Single Phase",
+          "IP Rating": "IP66 for Shell, IP55 for Gun",
+          "Altitude": "≤4000m",
+          "Relative Humidity": "5%~95% No Condensation",
+          "Operating Temperature": "-20℃~+65℃(EU); -40℃~+65℃(US)",
+          "Storage Temperature": "-40℃~+85℃",
+          "Leakage Protection Current": "DC 6mA, AC30mA",
+          "Leakage Protection Time": "≤0.1s",
+          "Cable Length": "7m",
+          "Connector Power Line Contact": "AC 277V, 32A",
+          "Functions": "WiFi, 4G, Bluetooth, RFID (with 2 RFID cards)",
+          "Communication Protocol": "OCPP1.6JSON",
+          "APP Available": "Yes",
+          "Product Size": "420×251×145mm",
+          "Net Weight": "4.56kg"
+        }
+      },
+      "features": [
+        "CCS2 EV car compatible",
+        "Single phase with optional 3.7kW or 7.4kW AC charging",
+        "Max IP66 rated for indoor/outdoor applications",
+        "Optional wireless connection with WiFi/4G/Bluetooth for commercial applications",
+        "Optional RFID function for community application",
+        "Compact design for easy carry and installation",
+        "Optional wall-mounted installation or pedestal installation",
+        "Multiple protections for safe use"
+      ]
+    },
+    "e22": {
+      "name": "E SERIES – 22kW 32A Three Phases EV Charger",
+      "model": "E SERIES",
+      "brief": "Three‑phase EV charger with optional 11kW or 22kW AC charging.",
+      "price": "Request a quote",
+      "image": "assets/img/22kw.png",
+      "imageAvif": "assets/img/22kw.avif",
+      "imageWebp": "assets/img/22kw.webp",
+      "gallery": ["assets/img/22kw.png"],
+      "description": "A three‑phase EV charger designed for indoor or outdoor installation. It supports optional 11kW or 22kW AC charging, with optional WiFi connectivity and RFID, plus multiple built‑in protections for safe everyday use.",
+      "specifications": {
+        "Technical specifications": {
+          "Power": "22kW; 11kW option",
+          "Voltage": "AC 400V",
+          "Rated Input Current": "32A; 16A option",
+          "Operating Frequency": "50Hz",
+          "Phase": "Three Phases",
+          "IP Rating": "IP55",
+          "Altitude": "≤2000m",
+          "Related Temperature": "5%~95% No Condensation",
+          "Operating Temperature": "-20℃~+50℃",
+          "Storage Temperature": "-40℃~+85℃",
+          "Leakage Protection Current": "DC 6mA, AC 30mA",
+          "Leakage Protection Time": "≤0.1s",
+          "Cable Length": "7m",
+          "Connector Power Line Contact": "AC 400V, 63A",
+          "Functions": "WiFi, 4G, Bluetooth, RFID (with 2 RFID cards)",
+          "Communication Protocol": "OCPP1.6JSON (for WiFi Option Only)",
+          "APP Available": "Yes",
+          "Product Size": "473×290×160mm",
+          "Net Weight": "8kg"
+        }
+      },
+      "features": [
+        "CCS2 EV car compatible",
+        "Three phases with optional 11kW or 22kW AC charging",
+        "Max IP55 rated for indoor/outdoor applications",
+        "Optional wireless connection with WiFi function for commercial application",
+        "Optional RFID function for residential application",
+        "Optional wall-mounted installation or pedestal installation for different installation demand",
+        "Compact design for easy carry and installation",
+        "Multiple protections for safe use"
+      ]
+    },
+    "t35": {
+      "name": "T SERIES – 3.5kW 16A Portable EV Charger",
+      "model": "T SERIES",
+      "brief": "Compact portable single‑phase EV charger for plug‑in charging.",
+      "price": "Request a quote",
+      "image": "assets/img/3.5kw.png",
+      "imageAvif": "assets/img/3.5kw.avif",
+      "imageWebp": "assets/img/3.5kw.webp",
+      "gallery": ["assets/img/3.5kw.png"],
+      "description": "A compact portable EV charger for indoor or outdoor applications. Single‑phase 3.5kW AC charging with plug‑in & charge operation, multiple protections for safe use, and optional plug types for different countries.",
+      "specifications": {
+        "Technical specifications": {
+          "Power": "3.5kW",
+          "Voltage": "AC 230V",
+          "Rated Input Current": "Up to 16A",
+          "Operating Frequency": "50Hz",
+          "Phase": "Single Phase",
+          "IP Rating": "IP55",
+          "Altitude": "≤2000m",
+          "Related Temperature": "5%~95% No Condensation",
+          "Operating Temperature": "-20℃~+50℃",
+          "Storage Temperature": "+30℃~+70℃",
+          "Leakage Protection Current": "DC 6mA, AC 30mA",
+          "Leakage Protection Time": "≤0.1s",
+          "Cable Length": "5m",
+          "Functions": "Plug-in&Charge",
+          "Product Size": "100×230×67mm",
+          "Net Weight": "3kg"
+        }
+      },
+      "features": [
+        "CCS2 EV car compatible",
+        "IP55 rated for indoor/outdoor applications",
+        "Compact design for easy take",
+        "Single phase with 3.5kW AC charging",
+        "Plug-in and charge with multiple protections for safe use",
+        "Optional plug types for different countries"
+      ]
+    },
+    "dc60": {
+      "name": "DC J-LINE – 60kW",
+      "model": "DC J-LINE",
+      "brief": "High-performance DC charging in a compact form factor.",
+      "price": "Request a quote",
+      "image": "assets/img/60kw.png",
+      "imageAvif": "assets/img/60kw.avif",
+      "imageWebp": "assets/img/60kw.webp",
+      "gallery": ["assets/img/60kw.png"],
+      "description": "High-performance charging in a compact form factor, offering an affordable solution compatible with all EVs. Flexible installation options — wall-mounted or pedestal-mounted — suit both commercial and residential settings.",
+      "specifications": {
+        "Technical specifications": {
+          "Power": "60kW",
+          "Input Voltage": "Three phase, 400VAC±15% TN-S",
+          "Frequency": "45~65 Hz",
+          "Max Output Current": "CCS2:200A CHAdeMO:125A",
+          "Operating Temperature": "-30℃~+50℃",
+          "Relative Humidity": "5-95%, without condensation",
+          "Ingress Protection": "IP54",
+          "Cooling Method": "Forced Air-Cooling",
+          "Network Connection": "4G/Ethernet",
+          "Communication Protocols": "OCPP 1.6J or OCPP 2.0.1",
+          "Screen": "8\" LCD Touch Screen",
+          "Cable Length": "Base 5 or 7 meter cable, with optional length selection",
+          "Dimensions (W*D*H)": "690*357*1686mm",
+          "Packing Size (W*D*H)": "Charger:1250*1024*742mm Column:740*680*1878mm",
+          "Weight (including outer packaging)": "Charger:216.5kg, Column:107kg",
+          "Payment": "APP/RFID/POS(Optional)",
+          "Language": "Supports multiple language customization"
+        }
+      },
+      "features": [
+        "Good value: high-performance charging in a compact form factor",
+        "Compact design with flexible wall-mounted or pedestal-mounted installation",
+        "8-inch LCD touchscreen with bright 800-nit display and auto dimming",
+        "Small footprint design for space-efficient installation",
+        "Easy on-site setup with convenient maintenance",
+        "Flexible payments via mobile app, RFID card, or POS machine (optional)",
+        "Protections: undervoltage/overvoltage/DC overcurrent/over-temperature/SPD/emergency stop/ground"
+      ]
+    }
+  }
+  </script>
+
+  <!-- Footer占位符 - 被动态加载 -->
+  <div id="footer-placeholder"></div>
+
+  <script src="assets/js/nav.js" defer></script>
+  <!-- <script src="assets/js/main.js"></script> -->
+  <script src="assets/js/product-detail.js" defer></script>
+</body>
+
+</html>

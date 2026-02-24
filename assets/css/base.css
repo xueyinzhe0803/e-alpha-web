@@ -1,0 +1,359 @@
+/* 1. 基础 Reset & 盒模型 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  /* 全局兜底防横向溢出 */
+}
+
+main {
+  padding-top: 90px;
+}
+
+/*2. 图片 & 媒体默认- */
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*3. 链接与按钮可访问性- */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/*4. 键盘可访问性*/
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/*5. 工具类*/
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:root {
+  --site-max: 1100px;
+  --gap: 16px;
+  --text: #111;
+  --text-invert: #fff;
+  --accent: #e53935;
+  --product-image-bg: rgb(228, 233, 239);
+
+  /* 渐变背景颜色变量 */
+  --gradient-bg-1: #f8f9fa;
+  --gradient-bg-2: #e3f2fd;
+  --gradient-bg-3: #e8f5e8;
+  --gradient-bg-4: #fff3e0;
+  --gradient-bg-5: #fce4ec;
+
+  /* 装饰性渐变颜色 */
+  --decorative-purple: rgba(120, 119, 198, 0.1);
+  --decorative-pink: rgba(255, 119, 198, 0.1);
+  --decorative-blue: rgba(120, 219, 255, 0.1);
+}
+
+.page-container {
+  max-width: var(--site-max);
+  margin: 0 auto;
+  padding: 0 var(--gap);
+}
+
+/*6. 动画区域的裁剪防溢出*/
+.content,
+.section5 {
+  overflow: clip;
+  overflow-x: hidden;
+}
+
+/*7. Footer 样式*/
+.site-footer {
+  background: #232323;
+  color: #e9e9e9;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+.footer-top {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 3fr 2fr 1.2fr 1fr;
+  padding: 24px 0 28px;
+}
+
+.footer-col {
+  min-width: 0;
+  /* 允许内容在 grid 列内收缩，避免溢出覆盖相邻列 */
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+.footer-title.mtop {
+  margin-top: 12px;
+}
+
+.footer-col p {
+  margin: 4px 0;
+  color: #cfcfcf;
+}
+
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-list li {
+  margin: 2px 0;
+}
+
+/* Footer 内部 NZ/AU 两列布局（避免 flex 溢出导致的跨列重叠） */
+.contact-row,
+.locations-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 24px;
+  row-gap: 10px;
+}
+
+.contact-group,
+.location-group {
+  min-width: 0;
+}
+
+.location-subtitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.footer-link {
+  color: #bfe0ff;
+  text-decoration: none;
+  font-size: 13px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  /* 比 break-all 更好看，也能确保不跨列 */
+  word-break: normal;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  text-decoration: underline;
+}
+
+/* 社交图标 */
+.footer-social .social-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  /* "-->"文本节点混入，直接不可见 */
+  font-size: 0;
+  line-height: 0;
+}
+
+.footer-social .social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  transition: transform .15s ease, filter .2s ease;
+  outline: none;
+}
+
+.footer-social .social:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.footer-social .social:focus-visible {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, .5);
+}
+
+.footer-social .social-icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+/* Footer 底部 */
+.footer-bottom {
+  border-top: 1px solid #3a3a3a;
+  background: #1f1f1f;
+}
+
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: flex-end;
+  padding: 8px 0;
+}
+
+.copyright {
+  margin: 0;
+  color: #b5b5b5;
+}
+
+.foot-mail a {
+  color: #cfe5ff;
+  text-decoration: none;
+}
+
+.foot-mail a:hover,
+.foot-mail a:focus-visible {
+  text-decoration: underline;
+}
+
+/*8. 响应式*/
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-row,
+  .locations-row {
+    column-gap: 20px;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 8px 0;
+  }
+}
+
+/*9. 统一渐变背景样式*/
+.gradient-background {
+  background: linear-gradient(135deg,
+      var(--gradient-bg-1) 0%,
+      var(--gradient-bg-2) 25%,
+      var(--gradient-bg-3) 50%,
+      var(--gradient-bg-4) 75%,
+      var(--gradient-bg-5) 100%);
+  position: relative;
+}
+
+.gradient-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, var(--decorative-purple) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, var(--decorative-pink) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, var(--decorative-blue) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* 可复用的渐变背景样式 */
+.gradient-section {
+  background: linear-gradient(135deg,
+      var(--gradient-bg-1) 0%,
+      var(--gradient-bg-2) 25%,
+      var(--gradient-bg-3) 50%,
+      var(--gradient-bg-4) 75%,
+      var(--gradient-bg-5) 100%);
+  position: relative;
+}
+
+.gradient-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, var(--decorative-purple) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, var(--decorative-pink) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, var(--decorative-blue) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* 半透明卡片样式 */
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1;
+}
+
+/* 内容层级确保 */
+.content-layer {
+  position: relative;
+  z-index: 1;
+}
+
+/*10. 动画与无障碍优化*/
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

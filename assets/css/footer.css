@@ -1,0 +1,308 @@
+/* 公共容器（如你的站点已有容器样式，可删除此行） */
+/* 工具类：视觉隐藏（供辅助功能使用） */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 仅 Footer 使用的容器，避免与全站 .container 冲突 */
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+/* 顶部（信息区） */
+.site-footer {
+  background: #232323;
+  color: #e9e9e9;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer-top {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 3fr 2fr 1.2fr 1fr;
+  padding: 24px 0 28px;
+}
+
+.footer-col {
+  min-width: 0;
+  position: relative;
+}
+
+/* 专门给联系信息和地点列增加隔离带 */
+.footer-col:first-child,
+.footer-col:nth-child(2) {
+  padding-right: 20px;
+}
+
+.footer-title {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+.footer-title.mtop {
+  margin-top: 8px;
+}
+
+.footer-col p {
+  margin: 4px 0;
+  color: #cfcfcf;
+}
+
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-list li {
+  margin: 2px 0;
+}
+
+/* Locations 并排布局 */
+.locations-row,
+.contact-row {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 24px;
+  width: 100%;
+}
+
+.location-group,
+.contact-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.location-subtitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 !important;
+  padding-top: 0 !important;
+}
+
+.location-group .footer-list {
+  margin: 0;
+  padding: 0;
+}
+
+.location-group .footer-list li {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.footer-link {
+  color: #bfe0ff;
+  text-decoration: none;
+  font-size: 13px;
+  word-break: break-all;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  text-decoration: underline;
+}
+
+/* 社交图标（SVG） */
+.footer-social .social-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.footer-social .social {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: #2e2e2e;
+  border: 1px solid #3a3a3a;
+  transition: transform .15s ease, background .2s ease, box-shadow .2s ease;
+  outline: none;
+}
+
+.footer-social .social:hover {
+  background: #3b82f6;
+  transform: translateY(-1px);
+}
+
+.footer-social .social:focus-visible {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, .5);
+}
+
+.footer-social svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* 底部横线 + 版权 */
+.footer-bottom {
+  border-top: 1px solid #3a3a3a;
+  background: #1f1f1f;
+}
+
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.copyright {
+  margin: 0;
+  color: #b5b5b5;
+}
+
+.foot-mail a {
+  color: #cfe5ff;
+  text-decoration: none;
+}
+
+.foot-mail a:hover,
+.foot-mail a:focus-visible {
+  text-decoration: underline;
+}
+
+/* 响应式 */
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 0 20px;
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 24px 0 28px;
+    justify-items: center;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .footer-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .footer-col p {
+    font-size: 13px;
+  }
+
+  .footer-list {
+    text-align: center;
+  }
+
+  .locations-row,
+  .contact-row {
+    justify-content: center;
+    flex-direction: row !important;
+  }
+
+  .footer-social .social-row {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .locations-row,
+  .contact-row {
+    flex-direction: row !important;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .location-group,
+  .contact-group {
+    text-align: center;
+  }
+
+  .footer-container {
+    padding: 0 20px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 0 24px;
+    text-align: center;
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .footer-col p {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .footer-list {
+    text-align: center;
+  }
+
+  .footer-list li {
+    margin: 4px 0;
+  }
+
+  .footer-social .social-row {
+    justify-content: center;
+  }
+
+  .footer-social .social {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer-social svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 0;
+    text-align: center;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+
+  .foot-mail {
+    font-size: 12px;
+  }
+}

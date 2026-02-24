@@ -1,0 +1,285 @@
+/* ========== 通用 ========== */
+:root {
+  --blue: #3b82f6;
+  --dark: rgba(18, 18, 18, .82);
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: var(--blue);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 6px 16px rgba(59, 130, 246, .25);
+  transition: .2s ease;
+  letter-spacing: .2px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  border: 2px solid rgba(255, 255, 255, .85);
+  backdrop-filter: blur(2px);
+  transition: .2s ease;
+  margin-left: 12px;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, .14);
+  transform: translateY(-1px);
+}
+
+/* reveal 基础 */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+  transition: .6s ease;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.reveal-left.in-view {
+  opacity: 1;
+  transform: none;
+  transition: .7s ease;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.reveal-right.in-view {
+  opacity: 1;
+  transform: none;
+  transition: .7s ease;
+}
+
+/*  Section 1：Hero  */
+.service-hero {
+  position: relative;
+  height: 100vh;
+  background: url('../img/Worker.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 5vw;
+  color: #fff;
+}
+
+/* 半透明遮罩，保证文字清晰 */
+.service-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+}
+
+.service-hero-title {
+  font-size: clamp(28px, 4.6vw, 52px);
+  line-height: 1.1;
+  margin: 0 0 12px;
+  font-weight: 900;
+}
+
+.service-hero-sub {
+  opacity: .9;
+  margin: 0 0 22px;
+}
+
+.service-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* 小屏优化：顶部留点安全距离、文案居中 */
+@media (max-width: 1000px) {
+  .service-hero {
+    justify-content: center;
+    padding: 10vh 5vw 6vh;
+    height: 90vh;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+}
+
+/* ========== S2：Intro - 使用index.css中的content-section样式 ========== */
+
+/* ========== S3：Services Grid ========== */
+.service-grid-section {
+  background: #ffffff;
+  padding: 100px 0;
+}
+
+.services-title {
+  text-align: center;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  color: #555;
+  margin: 0 0 60px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.service-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.service-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #333;
+  margin: 0 0 16px;
+}
+
+.service-desc {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========== S4：Why Choose Our Service ========== */
+.service-why {
+  background: #f8f9fa;
+  padding: 100px 3vw 120px;
+}
+
+.why-title {
+  text-align: center;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  color: #555;
+  margin: 0 0 80px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 60px 32px;
+  width: 100%;
+  margin: 0 auto 60px;
+  max-width: none;
+}
+
+.why-item {
+  text-align: center;
+  padding: 24px 20px;
+}
+
+.why-ico {
+  font-size: 64px;
+  color: #64aefc;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.why-h {
+  font-weight: 800;
+  color: #6b7280;
+}
+
+.why-p {
+  color: #9ca3af;
+}
+
+.why-cta {
+  text-align: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-grid-section {
+    padding: 80px 0;
+  }
+
+  .service-why {
+    padding: 80px 3vw 100px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .service-item {
+    padding: 30px 20px;
+  }
+}

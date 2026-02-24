@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="After-sales service and maintenance for EV chargers. 
+  Diagnostics, upgrades and repairs by E-ALPHA technicians." />
+  <title>EV Charger Maintenance & Service – E-Alpha</title>
+
+  <!-- 预加载关键CSS -->
+  <link rel="preload" as="style" href="assets/css/base.css">
+  <link rel="preload" as="style" href="assets/css/nav.css">
+
+  <!-- 关键CSS同步加载 -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+
+  <!-- 非关键CSS异步加载 -->
+  <link rel="stylesheet" href="assets/css/index.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/css/service.css" media="print" onload="this.media='all'">
+</head>
+
+<body class="gradient-background">
+
+  <!-- 导航栏占位符 - 被动态加载 -->
+  <div id="header-placeholder"></div>
+
+  <!-- ============ Section 1：Hero（左大图 + 右暗色信息面板） ============ -->
+  <section class="service-hero">
+    <div class="hero-content reveal">
+      <h1 class="service-hero-title">
+        EV Charger<br>
+        Maintenance &<br>
+        Service Solutions<br>
+        in Auckland
+      </h1>
+
+      <p class="service-hero-sub">
+        Keep your EV charging infrastructure running smoothly with our comprehensive maintenance and service programs.
+      </p>
+
+      <div class="service-hero-cta">
+        <a href="instant-quote.html" class="btn-primary">Get Service Quote</a>
+        <a href="tel:0425742925" class="btn-outline">0425 742 925</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Section 2：Intro + 大标题 + 段落 ============ -->
+  <section class="content-section">
+    <div class="content-box">
+      <!-- 左侧背景区域 -->
+      <div class="content-left reveal-left"
+        style="background: url('./assets/img/zeeda-moring1.avif') center/cover no-repeat;">
+      </div>
+
+      <!-- 右侧文字内容 -->
+      <div class="content-right reveal-right">
+        <h2 class="content-title">
+          Professional EV Charger<br>
+          Maintenance Services
+        </h2>
+        <div class="content-text">
+          <p>
+            We don't just install chargers — we provide ongoing maintenance and support to keep your EV infrastructure
+            running smoothly. Our certified technicians ensure your charging stations operate at peak performance.
+          </p>
+          <p>
+            From routine inspections and software updates to emergency repairs and performance optimization,
+            our comprehensive service programs are designed to maximize uptime and extend the lifespan of your
+            EV charging equipment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Section 3：Services Grid ============ -->
+  <section class="service-grid-section">
+    <div class="container">
+      <h2 class="services-title reveal">Our Service Offerings</h2>
+
+      <div class="services-grid">
+        <div class="service-item reveal">
+          <div class="service-icon">🔧</div>
+          <h3 class="service-name">Routine Maintenance</h3>
+          <p class="service-desc">Regular inspections, cleaning, and performance checks to prevent issues before they
+            occur.</p>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-icon">⚡</div>
+          <h3 class="service-name">Software Updates</h3>
+          <p class="service-desc">Keep your chargers up-to-date with the latest firmware and security patches.</p>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-icon">🚨</div>
+          <h3 class="service-name">Emergency Repairs</h3>
+          <p class="service-desc">24/7 <br> emergency response for critical issues that need immediate attention.</p>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-icon">📊</div>
+          <h3 class="service-name">Performance Monitoring</h3>
+          <p class="service-desc">Remote monitoring and analytics to optimize charging efficiency and usage patterns.
+          </p>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-icon">🛡️</div>
+          <h3 class="service-name">Warranty Support</h3>
+          <p class="service-desc">Provide comprehensive 2-year warranty coverage and service support for all installed
+            devices.</p>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-icon">📞</div>
+          <h3 class="service-name">Technical Support</h3>
+          <p class="service-desc">Expert technical assistance and troubleshooting for all your charging needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Section 4：Why Choose Our Service ============ -->
+  <section class="service-why">
+    <div class="container">
+      <h2 class="why-title reveal">Why Choose Our Service?</h2>
+
+      <div class="why-grid">
+        <div class="why-item reveal">
+          <div class="why-ico">🏆</div>
+          <div class="why-h">Certified</div>
+          <div class="why-p">Expert Technicians</div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-ico">⏰</div>
+          <div class="why-h">24/7</div>
+          <div class="why-p">Emergency Support</div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-ico">💰</div>
+          <div class="why-h">Cost Effective</div>
+          <div class="why-p">Preventive Maintenance</div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-ico">📈</div>
+          <div class="why-h">Performance</div>
+          <div class="why-p">Optimized Efficiency</div>
+        </div>
+      </div>
+
+      <div class="why-cta reveal">
+        <a class="btn-primary" href="instant-quote.html">Get Service Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer占位符 - 被动态加载 -->
+  <div id="footer-placeholder"></div>
+
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/animation.js" defer></script>
+</body>
+
+</html>

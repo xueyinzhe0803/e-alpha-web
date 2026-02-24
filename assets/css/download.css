@@ -1,0 +1,185 @@
+/* ===== Downloads 页面样式 ===== */
+
+/* 让 footer 贴底：页面内容不足一屏时，footer 仍在底部 */
+body.gradient-background {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.gradient-background>main {
+  flex: 1 0 auto;
+}
+
+#footer-placeholder {
+  margin-top: auto;
+}
+
+/* 导航（与 about-us 一致） */
+.breadcrumb {
+  background: #f8f9fa;
+  padding: 12px 0;
+  border-bottom: 1px solid #e9ecef;
+  margin-top: 140px;
+}
+
+.breadcrumb-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.breadcrumb-list li {
+  display: flex;
+  align-items: center;
+  color: #6c757d;
+}
+
+.breadcrumb-list li+li::before {
+  content: "›";
+  margin-inline: 8px;
+  color: #6c757d;
+}
+
+.breadcrumb-list a {
+  color: var(--accent, #3b82f6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb-list a:hover {
+  color: #d32f2f;
+  text-decoration: underline;
+}
+
+.breadcrumb-list .current-page {
+  color: #6c757d;
+}
+
+.downloads-section {
+  padding: 70px 0 90px;
+}
+
+.downloads-head {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.downloads-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 12px;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: .2px;
+}
+
+.downloads-subtitle {
+  margin: 0;
+  color: #4b5563;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.downloads-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.download-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 16px 30px rgba(2, 6, 23, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.download-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(2, 6, 23, 0.12);
+}
+
+.download-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.download-name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.download-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #1d4ed8;
+  background: rgba(59, 130, 246, 0.12);
+}
+
+.download-desc {
+  margin: 10px 0 0;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.download-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: #fff;
+  background: #3b82f6;
+  transition: transform 0.2s ease, filter 0.2s ease, background 0.2s ease;
+}
+
+.download-link:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.download-link.is-secondary {
+  background: #0f172a;
+}
+
+@media (max-width: 1000px) {
+  .breadcrumb {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .downloads-section {
+    padding: 54px 0 70px;
+  }
+
+  .downloads-grid {
+    grid-template-columns: 1fr;
+  }
+}

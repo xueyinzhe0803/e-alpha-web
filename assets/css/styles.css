@@ -1,0 +1,362 @@
+:root {
+  --bg-dark: #0b0b0d;
+  --bg-light: #f6f7f9;
+  --text: #111;
+  --text-invert: #fff;
+  --accent: #e53935;
+}
+
+/* 全局基础样式重置*/
+* {
+  box-sizing: border-box
+}
+
+/* 页面滚动行为：点击锚点链接时平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 移除默认的页面边距和内边距 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* 页面主体样式：字体、颜色、背景 */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+  color: var(--text);
+  /* 使用变量定义的文字颜色 */
+  /* 背景由gradient-background类提供，不在此处设置 */
+}
+
+/* 通用容器样式（用于内容居中和限制宽度） */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px
+}
+
+/* 轮播图区域 - 首页大图轮播*/
+/* 轮播图主容器 */
+.hero {
+  position: relative
+}
+
+.carousel {
+  position: relative
+}
+
+.slides {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 56vw;
+  max-height: 560px;
+  overflow: hidden
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background: #000 center/cover no-repeat;
+  opacity: 0;
+  transition: opacity .5s ease
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg-overlay, linear-gradient(180deg, rgba(0, 0, 0, .25), rgba(0, 0, 0, .45)))
+}
+
+.slide {
+  background-image: var(--bg)
+}
+
+.slide.active {
+  opacity: 1
+}
+
+.overlay {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 90vw;
+}
+
+.overlay-title {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, .8);
+  line-height: 1.2
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+  transition: all 0.3s ease;
+  z-index: 5
+}
+
+.carousel-control:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #fff;
+  transform: translateY(-50%) scale(1.1)
+}
+
+.carousel-control.prev {
+  left: 24px
+}
+
+.carousel-control.next {
+  right: 24px
+}
+
+.carousel-control span {
+  font-size: 24px;
+  line-height: 1;
+  color: #333;
+  font-weight: bold
+}
+
+/* 响应式设计 - 适配不同屏幕尺寸*/
+/* 手机设备样式 (≤768px) */
+@media (max-width: 768px) {
+
+  /* 产品区域调整上边距 */
+  .product-showcase {
+    padding-top: 140px;
+  }
+
+  .overlay {
+    left: 50%;
+    text-align: center
+  }
+
+  .overlay-title {
+    font-size: 32px
+  }
+
+  .carousel-control {
+    width: 44px;
+    height: 44px
+  }
+
+  .carousel-control.prev {
+    left: 16px
+  }
+
+  .carousel-control.next {
+    right: 16px
+  }
+}
+
+/* 产品展示区域 - 显示产品卡片列表 */
+/* 产品展示区主容器 */
+.product-showcase {
+  padding: 140px 0 40px;
+  /* 上边距140px避免被固定导航栏遮挡，下边距40px */
+  /* 背景由gradient-background类提供 */
+}
+
+.product-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
+.product-item {
+  width: 440px;
+  height: 540px;
+  margin: 0;
+  overflow: hidden
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15)
+}
+
+.product-card {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15)
+}
+
+.product-image {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  padding: 15px;
+  background: var(--product-image-bg)
+}
+
+.product-info {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+.product-name {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+}
+
+/* .product-brief {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  flex: 1
+} */
+
+.product-detail-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start
+}
+
+.product-detail-btn:hover {
+  background: #c62828;
+  transform: translateY(-1px)
+}
+
+/* 大屏过渡 */
+@media (max-width: 1200px) {
+  .product-list {
+    flex-wrap: wrap;
+    justify-content: center
+  }
+
+  .product-item {
+    margin: 0px 10px 20px 10px
+  }
+}
+
+@media (max-width: 768px) {
+  .product-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .product-item {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    min-height: 400px;
+    margin: 0;
+  }
+
+  .product-card {
+    height: 100%;
+    min-height: 400px;
+  }
+
+  .product-image {
+    height: 300px;
+    padding: 10px;
+  }
+
+  .product-info {
+    padding: 15px;
+    min-height: 80px;
+    justify-content: center;
+  }
+
+  .product-name {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .product-detail-btn {
+    display: none;
+  }
+}
+
+/* 更小的移动端设备优化 */
+@media (max-width: 480px) {
+  .product-item {
+    width: 95%;
+    max-width: 350px;
+    min-height: 380px;
+  }
+
+  .product-image {
+    height: 280px;
+    padding: 8px;
+  }
+
+  .product-info {
+    padding: 12px;
+    min-height: 70px;
+    justify-content: center;
+  }
+
+  .product-name {
+    font-size: 15px;
+    line-height: 1.3;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .product-detail-btn {
+    display: none;
+  }
+}

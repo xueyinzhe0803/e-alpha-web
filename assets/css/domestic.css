@@ -1,0 +1,429 @@
+/* ========== 通用 ========== */
+:root {
+  --blue: #3b82f6;
+  --dark: rgba(18, 18, 18, .82);
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: var(--blue);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 6px 16px rgba(59, 130, 246, .25);
+  transition: .2s ease;
+  letter-spacing: .2px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  border: 2px solid rgba(255, 255, 255, .85);
+  backdrop-filter: blur(2px);
+  transition: .2s ease;
+  margin-left: 12px;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, .14);
+  transform: translateY(-1px);
+}
+
+/* reveal 基础（如已在全站 CSS 里定义可删） */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+  transition: .6s ease;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.reveal-left.in-view {
+  opacity: 1;
+  transform: none;
+  transition: .7s ease;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.reveal-right.in-view {
+  opacity: 1;
+  transform: none;
+  transition: .7s ease;
+}
+
+/*  Section 1：Hero  */
+.dom-hero {
+  position: relative;
+  height: 100vh;
+  /* 整屏高度 */
+  background: url('../img/zeeda-night.png') center/cover no-repeat;
+  /* ← 换成你的图 */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* 文案靠右，如需居中改为 center */
+  padding: 0 5vw;
+  color: #fff;
+}
+
+/* 半透明遮罩，保证文字清晰 */
+.dom-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  /* 盖在遮罩上 */
+  max-width: 560px;
+}
+
+.dom-hero-title {
+  font-size: clamp(28px, 4.6vw, 52px);
+  line-height: 1.1;
+  margin: 0 0 12px;
+  font-weight: 900;
+}
+
+.dom-hero-sub {
+  opacity: .9;
+  margin: 0 0 22px;
+}
+
+.dom-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* 若旧样式仍在，确保它们不生效（保险） */
+.dom-hero-media,
+.dom-hero-panel {
+  display: none !important;
+}
+
+/* 小屏优化：顶部留点安全距离、文案居中 */
+@media (max-width: 1000px) {
+  .dom-hero {
+    justify-content: center;
+    padding: 10vh 5vw 6vh;
+    height: 90vh;
+    /* 适当收一点，避免过高 */
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+}
+
+
+/* ========== S2：Intro + Brands（统一风格） ========== */
+.dom-intro {
+  padding: 120px 0 120px;
+  /* 上下呼吸感一致 */
+}
+
+.intro-title {
+  text-align: center;
+  font-size: clamp(32px, 4.5vw, 48px);
+  /* 标题与区域4统一 */
+  margin: 0 0 40px;
+  font-weight: 900;
+  color: #333;
+}
+
+.intro-lead {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 28px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  /* 行距舒展 */
+  color: #444;
+}
+
+.intro-text {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  /* 与品牌标题间距更大 */
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.brands-title {
+  text-align: center;
+  margin: 50px 0 28px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #444;
+}
+
+.brand-logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.brand-item {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #4A90E2;
+}
+
+.brand-item img {
+  max-width: 100%;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 8px;
+}
+
+.brand-item span {
+  color: #444;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+/* 响应式布局 */
+@media (max-width: 1024px) {
+  .brand-logos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 600px;
+  }
+
+  .brand-item {
+    padding: 15px 10px;
+    min-height: 80px;
+  }
+
+  .brand-item img {
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    max-width: 400px;
+  }
+
+  .brand-item {
+    padding: 12px 8px;
+    min-height: 70px;
+  }
+
+  .brand-item img {
+    max-height: 40px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    max-width: 320px;
+  }
+
+  .brand-item {
+    padding: 10px 6px;
+    min-height: 60px;
+  }
+
+  .brand-item img {
+    max-height: 35px;
+  }
+}
+
+/* Section 3：*/
+.dom-solutions {
+  position: relative;
+  height: 100vh;
+  /* 整屏 */
+  background: url('../img/zeeda-morning.png') center/cover no-repeat;
+  /* ← 换成你的图 */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* 文案靠左，如果想居中改 center，靠右改 flex-end */
+  padding: 0 5vw;
+  color: #fff;
+}
+
+.dom-solutions::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .4);
+  /* 半透明遮罩 */
+}
+
+.solutions-content {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+}
+
+.solutions-title {
+  font-size: clamp(26px, 3.8vw, 40px);
+  line-height: 1.2;
+  margin: 0 0 12px;
+  font-weight: 900;
+}
+
+.solutions-text {
+  opacity: .92;
+  margin: 0 0 22px;
+}
+
+/* 小屏优化 */
+@media (max-width: 1000px) {
+  .dom-solutions {
+    justify-content: center;
+    padding: 10vh 5vw 6vh;
+    height: 90vh;
+  }
+
+  .solutions-content {
+    text-align: center;
+  }
+}
+
+
+/* S4：Why Choose Us */
+.dom-why {
+  background: #ffffff;
+  padding: 100px 3vw 120px;
+  /* 上下空间加大 */
+}
+
+.why-title {
+  text-align: center;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  color: #555;
+  margin: 0 0 80px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 60px 32px;
+  width: 100%;
+  margin: 0 auto 60px;
+  max-width: none;
+}
+
+.why-item {
+  text-align: center;
+  padding: 24px 20px;
+  /* 内边距更宽 */
+}
+
+.why-ico {
+  font-size: 64px;
+  color: #64aefc;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.why-h {
+  font-weight: 800;
+  color: #6b7280;
+}
+
+.why-p {
+  color: #9ca3af;
+}
+
+.why-cta {
+  text-align: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dom-why {
+    padding: 80px 3vw 100px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .why-item {
+    padding: 20px 15px;
+  }
+}

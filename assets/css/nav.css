@@ -1,0 +1,350 @@
+/* ===== 基础布局 ===== */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  color: #fff;
+}
+
+.main-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.2);
+  backdrop-filter: none;
+  z-index: -1;
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 16px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  min-height: 80px;
+  position: relative;
+}
+
+/* 品牌区域向左偏移 */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+  /* 进一步增加右边距，与导航菜单保持更大距离 */
+  white-space: nowrap;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-text {
+  font-weight: 800;
+  letter-spacing: .5px;
+  font-size: clamp(18px, 2.2vw, 24px);
+}
+
+/* 桌面导航 */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  justify-content: center;
+}
+
+.nav-item,
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .45);
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover,
+.nav-link:hover,
+.nav-item:focus-visible,
+.nav-link:focus-visible {
+  background: rgba(255, 255, 255, .15);
+  outline: none;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/* 下拉 */
+.dropdown {
+  position: relative;
+}
+
+.dropdown .nav-link {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: #f0f0f0;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 180px;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  z-index: 1200;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
+.dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px 10px;
+  border-radius: 8px;
+  color: #f0f0f0;
+  text-decoration: none;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus-visible {
+  background: rgba(255, 255, 255, .08);
+  outline: none;
+}
+
+/* 社交图标区域 */
+.social-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  min-width: 100px;
+  justify-content: flex-end;
+}
+
+.social-section a[aria-label="Facebook"] svg path {
+  fill: currentColor !important;
+  stroke: none !important;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 强制把 Facebook 的 path 变成实心填充，解决 20px 下不可见的问题 */
+
+
+
+/* 汉堡按钮（移动端显示） */
+.mobile-menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, .18);
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2001;
+}
+
+.mobile-menu-toggle .hamburger-line {
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  display: block;
+  pointer-events: none;
+}
+
+/* 抽屉遮罩（移动端） */
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease;
+  z-index: 1900;
+}
+
+.menu-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* ===== 移动端抽屉 ===== */
+@media (max-width: 900px) {
+  .mobile-menu-toggle {
+    display: inline-flex !important;
+    z-index: 2001;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    pointer-events: auto;
+    user-select: none;
+  }
+
+  /* 隐藏社交图标在移动端 */
+  .social-section {
+    display: none;
+  }
+
+  .nav-menu {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 88px 20px 24px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    transform: translateX(-100%);
+    transition: transform .24s ease;
+    z-index: 2100;
+    pointer-events: auto;
+  }
+
+  .nav-menu.mobile-open {
+    transform: translateX(0);
+  }
+
+  .nav-item,
+  .nav-link {
+    padding: 18px 16px;
+    font-size: 20px;
+    background: transparent;
+    border-radius: 0;
+    color: #ffffff !important;
+    font-weight: 800;
+    margin-bottom: 8px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    pointer-events: auto;
+    display: block;
+    position: relative;
+    z-index: 2200;
+  }
+
+  /* 移动端下拉改为“点开”折叠 */
+  .dropdown .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: transparent;
+    border: 0;
+    padding: 0 0 6px 8px;
+    box-shadow: none;
+    display: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-item {
+    padding: 10px 8px;
+    color: #ffffff !important;
+    background: transparent;
+    border-radius: 0;
+    margin-bottom: 4px;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    pointer-events: auto;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    z-index: 2200;
+  }
+
+  .nav-item:hover,
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    transform: translateX(8px);
+    text-decoration: none !important;
+  }
+
+  .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    transform: translateX(8px);
+    text-decoration: none !important;
+  }
+}
+
+/* 可访问性快速样式 */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* 抽屉与遮罩的层级与可点性 */
+.menu-backdrop {
+  position: fixed;
+  z-index: 1000;
+}
+
+.nav-menu a,
+.nav-item,
+.nav-link {
+  pointer-events: auto !important;
+}

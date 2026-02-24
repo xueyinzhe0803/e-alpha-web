@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Browse EV chargers and accessories from E-ALPHA. 
+  Compare specs and find the right charger for your home or workplace." />
+  <title>Products - E-ALPHA </title>
+  <link rel="icon" href="assets/img/Logo.png" />
+  <!-- 预加载关键资源 -->
+  <link rel="preload" as="style" href="assets/css/base.css">
+  <link rel="preload" as="style" href="assets/css/nav.css">
+  <link rel="preload" as="script" href="assets/js/nav.js">
+
+  <!-- 关键CSS同步加载 -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+
+  <!-- 非关键CSS异步加载 -->
+  <link rel="stylesheet" href="assets/css/styles.css" media="print" onload="this.media='all'">
+</head>
+
+<body class="gradient-background">
+  <!-- 导航栏占位符 - 被动态加载 -->
+  <div id="header-placeholder"></div>
+
+  <section class="hero" aria-label="焦点轮播">
+    <div class="carousel" data-active-index="0">
+      <button class="carousel-control prev" aria-label="上一张"><span>‹</span></button>
+      <button class="carousel-control next" aria-label="下一张"><span>›</span></button>
+
+      <ul class="slides" aria-live="polite">
+        <li class="slide active"
+          style="background-image:url('assets/img/main.webp'); background-image:image-set(url('assets/img/main.avif') type('image/avif'), url('assets/img/main.webp') type('image/webp'));">
+          <div class="overlay">
+            <h1 class="overlay-title">E-ALPHA</h1>
+          </div>
+        </li>
+        <li class="slide"
+          style="background-image:url('assets/img/main-1.webp'); background-image:image-set(url('assets/img/main-1.avif') type('image/avif'), url('assets/img/main-1.webp') type('image/webp'));">
+          <div class="overlay">
+            <h1 class="overlay-title">E-ALPHA</h1>
+          </div>
+        </li>
+        <li class="slide"
+          style="background-image:url('assets/img/main-2.webp'); background-image:image-set(url('assets/img/main-2.avif') type('image/avif'), url('assets/img/main-2.webp') type('image/webp'));">
+          <div class="overlay">
+            <h1 class="overlay-title">E-ALPHA</h1>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="product-showcase" id="products">
+    <div class="container">
+      <ul class="product-list">
+        <li class="product-item">
+          <a href="product-detail.html?product=g74" class="product-card" data-product="g74">
+            <picture>
+              <source srcset="assets/img/7.4-G.avif" type="image/avif">
+              <source srcset="assets/img/7.4-G.webp" type="image/webp">
+              <img src="assets/img/7.4-G.png" alt="G SERIES 7.4kW 32A Single Phase EV Charger" class="product-image"
+                loading="lazy" />
+            </picture>
+            <div class="product-info">
+              <h3 class="product-name">G SERIES – 7.4kW 32A Single Phase EV Charger</h3>
+              <span class="product-detail-btn">Detail</span>
+            </div>
+          </a>
+        </li>
+        <li class="product-item">
+          <a href="product-detail.html?product=k74" class="product-card" data-product="k74">
+            <picture>
+              <source srcset="assets/img/7.4-K.avif" type="image/avif">
+              <source srcset="assets/img/7.4-K.webp" type="image/webp">
+              <img src="assets/img/7.4-K.png" alt="K SERIES 7.4kW 32A Single Phase EV Charger" class="product-image"
+                loading="lazy" />
+            </picture>
+            <div class="product-info">
+              <h3 class="product-name">K SERIES – 7.4kW 32A Single Phase EV Charger</h3>
+              <span class="product-detail-btn">Detail</span>
+            </div>
+          </a>
+        </li>
+        <li class="product-item">
+          <a href="product-detail.html?product=e22" class="product-card" data-product="e22">
+            <picture>
+              <source srcset="assets/img/22kw.avif" type="image/avif">
+              <source srcset="assets/img/22kw.webp" type="image/webp">
+              <img src="assets/img/22kw.png" alt="E SERIES 22kW 32A Three Phases EV Charger" class="product-image"
+                loading="lazy" />
+            </picture>
+            <div class="product-info">
+              <h3 class="product-name">E SERIES – 22kW 32A Three Phases EV Charger</h3>
+              <span class="product-detail-btn">Detail</span>
+            </div>
+          </a>
+        </li>
+        <li class="product-item">
+          <a href="product-detail.html?product=t35" class="product-card" data-product="t35">
+            <picture>
+              <source srcset="assets/img/3.5kw.avif" type="image/avif">
+              <source srcset="assets/img/3.5kw.webp" type="image/webp">
+              <img src="assets/img/3.5kw.png" alt="T SERIES 3.5kW 16A Portable EV Charger" class="product-image"
+                loading="lazy" />
+            </picture>
+            <div class="product-info">
+              <h3 class="product-name">T SERIES – 3.5kW 16A Portable EV Charger</h3>
+              <span class="product-detail-btn">Detail</span>
+            </div>
+          </a>
+        </li>
+        <li class="product-item">
+          <a href="product-detail.html?product=dc60" class="product-card" data-product="dc60">
+            <picture>
+              <source srcset="assets/img/60kw.avif" type="image/avif">
+              <source srcset="assets/img/60kw.webp" type="image/webp">
+              <img src="assets/img/60kw.png" alt="DC J-LINE 60kW" class="product-image" loading="lazy" />
+            </picture>
+            <div class="product-info">
+              <h3 class="product-name">DC J-LINE – 60kW</h3>
+              <span class="product-detail-btn">Detail</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer占位符 - 被动态加载 -->
+  <div id="footer-placeholder"></div>
+
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

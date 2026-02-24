@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Get a fast EV charger installation quote. 
+  Tell us your setup and receive pricing and timeline from E-ALPHA." />
+  <title>Instant Quote - E-ALPHA</title>
+  <link rel="icon" href="assets/img/Logo.png" />
+  <!-- 预加载关键CSS -->
+  <link rel="preload" as="style" href="assets/css/base.css">
+  <link rel="preload" as="style" href="assets/css/nav.css">
+
+  <!-- 关键CSS同步加载 -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+
+  <!-- 非关键CSS异步加载 -->
+  <link rel="stylesheet" href="assets/css/instant-quote.css" media="print" onload="this.media='all'">
+
+</head>
+
+<body>
+  <!-- 导航栏占位符 - 将被动态加载 -->
+  <div id="header-placeholder"></div>
+
+  <main class="quote-container gradient-background">
+    <div class="container">
+      <div class="quote-header content-layer">
+        <h1>Instant Quote</h1>
+        <p>Get your obligation-free quote for an EV charger installation in Auckland or Australia</p>
+      </div>
+
+      <form class="quote-form glass-card" id="quoteForm">
+        <!-- STEP 1 -->
+        <div class="form-step active" id="step1">
+          <div class="step-header">
+            <h2>Step 1: Vehicle and Residential Information</h2>
+            <div class="step-indicator">
+              <span class="step-number">1</span>
+              <span class="step-line"></span>
+              <span class="step-number">2</span>
+              <span class="step-line"></span>
+              <span class="step-number">3</span>
+              <span class="step-line"></span>
+              <span class="step-number">4</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="vehicleMake" class="required">Vehicle Make</label>
+            <input type="text" id="vehicleMake" name="vehicleMake" placeholder="e.g., Tesla" required>
+          </div>
+
+          <div class="form-group">
+            <label for="vehicleModel" class="required">Vehicle Model</label>
+            <input type="text" id="vehicleModel" name="vehicleModel" placeholder="e.g., Model 3" required>
+          </div>
+
+          <div class="form-group">
+            <label class="required">Residential Dwelling Type</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="dwellingType" value="single" required>
+                <span class="radio-custom"></span>
+                Single Storey
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="dwellingType" value="double" required>
+                <span class="radio-custom"></span>
+                Double Storey
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="dwellingType" value="other" required>
+                <span class="radio-custom"></span>
+                Other
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="required">Is Your Garage Attached?</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="garageAttached" value="yes" required>
+                <span class="radio-custom"></span>
+                Garage is attached to my house
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="garageAttached" value="no" required>
+                <span class="radio-custom"></span>
+                Garage is NOT attached to my house
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="switchboardLocation" class="required">Where on the Property is Your Switchboard Located
+              *</label>
+            <input type="text" id="switchboardLocation" name="switchboardLocation"
+              placeholder="e.g., switch board is in the side of the house" required>
+          </div>
+
+          <div class="form-group">
+            <label for="distance">How Many Metres Between the Charger & Switchboard Location?</label>
+            <input type="number" id="distance" name="distance" placeholder="e.g., 7.5" step="0.1" min="0">
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-primary" id="nextStep1">Next Step</button>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="form-step" id="step2">
+          <div class="step-header">
+            <h2>Step 2: Charge station</h2>
+            <div class="step-indicator">
+              <span class="step-number completed">1</span>
+              <span class="step-line completed"></span>
+              <span class="step-number">2</span>
+              <span class="step-line"></span>
+              <span class="step-number">3</span>
+              <span class="step-line"></span>
+              <span class="step-number">4</span>
+            </div>
+          </div>
+
+          <div class="step-intro">
+            <p>We can supply you with a genuine manufacturer's charger without you needing to organise one, easy!</p>
+          </div>
+
+          <div class="form-group">
+            <label class="required">Do you want us to supply a charger? *</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="supplyCharger" value="yes" required>
+                <span class="radio-custom"></span>
+                Yes please
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="supplyCharger" value="no" required>
+                <span class="radio-custom"></span>
+                No Thank You
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="prevStep2">Back</button>
+            <button type="button" class="btn btn-primary" id="nextStep2">Next Step</button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="form-step" id="step3">
+          <div class="step-header">
+            <h2>Step 3: Additional Information</h2>
+            <div class="step-indicator">
+              <span class="step-number completed">1</span>
+              <span class="step-line completed"></span>
+              <span class="step-number completed">2</span>
+              <span class="step-line completed"></span>
+              <span class="step-number">3</span>
+              <span class="step-line"></span>
+              <span class="step-number">4</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="additionalInfo">Any additional info to add?</label>
+            <textarea id="additionalInfo" name="additionalInfo" rows="4"
+              placeholder="Add additional notes here"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="prevStep3">Back</button>
+            <button type="button" class="btn btn-primary" id="nextStep3">Next Step</button>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="form-step" id="step4">
+          <div class="step-header">
+            <h2>Step 4: Contact Information</h2>
+            <div class="step-indicator">
+              <span class="step-number completed">1</span>
+              <span class="step-line completed"></span>
+              <span class="step-number completed">2</span>
+              <span class="step-line completed"></span>
+              <span class="step-number completed">3</span>
+              <span class="step-line completed"></span>
+              <span class="step-number">4</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName" class="required">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="e.g., Xavier" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName" class="required">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="e.g., Johnson" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="streetAddress" class="required">Street Address (Optional but needed for final quote)</label>
+            <input type="text" id="streetAddress" name="streetAddress" placeholder="e.g., 4 Morrin Road" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="state" class="required">State</label>
+              <input type="text" id="state" name="state" required>
+            </div>
+            <div class="form-group">
+              <label for="suburb" class="required">Suburb</label>
+              <input type="text" id="suburb" name="suburb" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="required">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="required">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g., 02" required>
+          </div>
+
+          <div class="form-group">
+            <label for="hearAbout" class="required">How did you hear about us?</label>
+            <select id="hearAbout" name="hearAbout" required>
+              <option value="">Choose an option</option>
+              <option value="google">Google Search</option>
+              <option value="other-search">Other Search Engine</option>
+              <option value="social-media">Social Media</option>
+              <option value="tesla-website">Tesla website</option>
+              <option value="word-of-mouth">Word of mouth</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="prevStep4">Back</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- 结果展示区域 -->
+      <div class="quote-result glass-card" id="quoteResult" style="display: none;">
+        <div class="result-header">
+          <h2>Quotation Request Result</h2>
+        </div>
+        <div class="result-content" id="resultContent">
+          <!-- 动态生成的结果内容 -->
+        </div>
+        <div class="result-actions">
+          <button type="button" class="btn btn-primary" id="newQuote">Submit a new quote request</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/instant-quote.js" defer></script>
+</body>
+
+</html>

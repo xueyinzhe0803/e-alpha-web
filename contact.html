@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact E-ALPHA for EV charger consultations, 
+  pricing and installation support in New Zealand." />
+  <title>Contact Us - E-ALPHA</title>
+  <link rel="icon" href="assets/img/Logo.png" />
+  <!-- 预加载关键CSS -->
+  <link rel="preload" as="style" href="assets/css/base.css">
+  <link rel="preload" as="style" href="assets/css/nav.css">
+
+  <!-- 关键CSS同步加载 -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+
+  <!-- 非关键CSS异步加载 -->
+  <link rel="stylesheet" href="assets/css/contact.css" media="print" onload="this.media='all'">
+
+</head>
+
+<body>
+  <!-- 导航栏占位符 - 将被动态加载 -->
+  <div id="header-placeholder"></div>
+
+  <!-- 页面导航 -->
+  <nav class="breadcrumb" aria-label="页面导航">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="current-page">Contact Us</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- 联系我们主体内容 -->
+  <main class="contact-main gradient-background">
+    <div class="container">
+      <div class="contact-header content-layer">
+        <h1 class="contact-title">Contact Us</h1>
+        <p class="contact-subtitle">Get in contact with Auckland's most trusted electric vehicle charger installers</p>
+      </div>
+
+      <div class="contact-content">
+        <div class="contact-info-grid">
+          <!-- 公司地址 -->
+          <div class="contact-card contact-card--address glass-card">
+            <div class="contact-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" />
+                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </div>
+            <h3 class="contact-card-title">Our Address</h3>
+            <div class="contact-card-content">
+              <p><strong>NZ:</strong></p>
+              <p>4 Morrin Road</p>
+              <p>Mount Wellington, Auckland 1072</p>
+              <p>New Zealand</p>
+              <p><strong>AU:</strong></p>
+              <p>Unit 512/830 Whitehorse Rd</p>
+              <p>Box Hill, VIC 3128</p>
+              <p>Australia</p>
+            </div>
+          </div>
+
+          <!-- 电子邮件 -->
+          <div class="contact-card contact-card--email glass-card">
+            <div class="contact-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  stroke="currentColor" stroke-width="2" />
+                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </div>
+            <h3 class="contact-card-title">Email Us</h3>
+            <div class="contact-card-content">
+              <!-- <p><strong>General Inquiries:</strong></p>
+              <p><a href="mailto:info@e-alpha.com">service@e-alpha.com</a></p> -->
+
+              <p><strong>NZ:</strong></p>
+              <p><strong>Sales:</strong></p>
+              <p><a href="mailto:sales@e-alpha.co.nz">customer.service@e-alpha.co.nz
+                </a></p>
+
+              <p><strong>After-sales Technical Support:</strong></p>
+              <p><a href="mailto:support@e-alpha.co.nz">Technics@e-alpha.co.nz</a></p>
+
+              <p><strong>AU:</strong></p>
+              <p><strong>Sales:</strong></p>
+              <p><a href="mailto:sales@e-alpha.com.au">customer.service@e-alpha.com.au</a></p>
+
+              <p><strong>After-sales Technical Support:</strong></p>
+              <p><a href="mailto:Technics@e-alpha.com.au">Technics@e-alpha.com.au</a></p>
+            </div>
+          </div>
+
+          <!-- 电话号码 -->
+          <div class="contact-card contact-card--call glass-card">
+            <div class="contact-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M22 16.92V18.92C22.0011 19.1985 21.9441 19.4742 21.8325 19.7293C21.7209 19.9845 21.5573 20.2136 21.3521 20.402C21.1468 20.5903 20.9046 20.7336 20.6407 20.8227C20.3769 20.9119 20.0974 20.9451 19.82 20.92C16.7428 20.5856 13.787 19.5341 11.19 17.85C8.77382 16.3147 6.72533 14.2662 5.18999 11.85C3.49997 9.2412 2.44824 6.271 2.11999 3.18C2.095 2.90347 2.12787 2.62476 2.21649 2.36162C2.30512 2.09849 2.44756 1.85669 2.63476 1.65162C2.82196 1.44655 3.0498 1.28271 3.30379 1.17052C3.55777 1.05833 3.83233 1.00026 4.10999 1H6.10999C6.59524 0.995321 7.06572 1.16708 7.43369 1.48353C7.80166 1.79999 8.04201 2.23945 8.10999 2.72C8.23662 3.68007 8.47144 4.62273 8.80999 5.53C8.94454 5.88792 8.97366 6.27691 8.8939 6.65088C8.81415 7.02485 8.62886 7.36811 8.35999 7.64L7.08999 8.91C8.51355 11.4135 10.5865 13.4864 13.09 14.91L14.36 13.64C14.6319 13.3711 14.9751 13.1858 15.3491 13.1061C15.7231 13.0263 16.1121 13.0555 16.47 13.19C17.3773 13.5286 18.3199 13.7634 19.28 13.89C19.7658 13.9585 20.2094 14.2032 20.5265 14.5775C20.8437 14.9518 21.0122 15.4296 21 15.92V16.92Z"
+                  stroke="currentColor" stroke-width="2" />
+              </svg>
+            </div>
+            <h3 class="contact-card-title">Call Us</h3>
+            <div class="contact-card-content">
+              <p><strong>NZ:</strong></p>
+              <p><strong>24/7 Support:</strong></p>
+              <p><a href="tel:+640800257420">+64 0800 257 420</a></p>
+
+              <p><strong>AU:</strong></p>
+              <p><strong>24/7 Support:</strong></p>
+              <p><a href="tel:+61450768910">+61 450 768 910</a></p>
+            </div>
+          </div>
+
+          <!-- 工作时间（居中并加宽；布局由 CSS 控制，避免挤到 Call Us 后面） -->
+          <div class="contact-card glass-card business-hours-card">
+            <div class="contact-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </div>
+            <h3 class="contact-card-title">Business Hours</h3>
+            <div class="contact-card-content">
+              <div class="business-hours-row" aria-label="Business hours by region">
+                <div class="business-hours-group">
+                  <p class="business-hours-region"><strong>NZ</strong></p>
+                  <p><strong>Monday - Friday:</strong></p>
+                  <p>9:00 AM - 6:00 PM</p>
+
+                  <p><strong>Saturday:</strong></p>
+                  <p>10:00 AM - 4:00 PM</p>
+
+                  <p><strong>Sunday:</strong></p>
+                  <p>Closed</p>
+
+                  <p><strong>Emergency Support:</strong></p>
+                  <p>24/7 Available</p>
+                </div>
+
+                <div class="business-hours-group">
+                  <p class="business-hours-region"><strong>AU</strong></p>
+                  <p><strong>Monday - Friday:</strong></p>
+                  <p>9:00 AM - 6:00 PM</p>
+
+                  <p><strong>Saturday:</strong></p>
+                  <p>10:00 AM - 4:00 PM</p>
+
+                  <p><strong>Sunday:</strong></p>
+                  <p>Closed</p>
+
+                  <p><strong>Emergency Support:</strong></p>
+                  <p>24/7 Available</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer占位符 - 被动态加载 -->
+  <div id="footer-placeholder"></div>
+
+  <script src="assets/js/nav.js" defer></script>
+
+</body>
+
+</html>
